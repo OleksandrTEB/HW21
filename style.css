@@ -60,9 +60,27 @@ li {
     background-color: #717070;
     border-radius: 10px;
     margin-bottom: 1rem;
-    padding: 5px 12px;
+    padding: 13px 12px;
     font-size: 1.2rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.delete {
+    background-color: #e63a3a;
+    width: 1.7rem;
+    height: 1.7rem;
+    padding: .4rem;
+    border-radius: 4px;
+    user-select: none;
+}
+
+.delete:hover {
+    cursor: pointer;
+    background-color: #981b1b;
+}
+.delete:active {
+    cursor: pointer;
+    background-color: #ca2525;
 }

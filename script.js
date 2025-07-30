@@ -1,4 +1,4 @@
-// lockalStorage.(key: contact, [{id, nameconatact, namber contact}])
+// localStorage.(key: contact, [{id, contactName, contactNumber}])
 
 function getContact() {
     let data = localStorage.getItem("contact");
@@ -18,7 +18,7 @@ function getId() {
     return newId + 1;
 }
 
-function setContact(contactName, contactNamber) {
+function setContact(contactName, contactNumber) {
     let data = getContact()
     data = (data) ? data : [];
     let id = getId()
@@ -26,7 +26,7 @@ function setContact(contactName, contactNamber) {
     let cont = {
         "id": id,
         "contactName": contactName,
-        "contactNamber": contactNamber
+        "contactNumber": contactNumber
     }
 
     data.push(cont)
@@ -43,6 +43,17 @@ function save() {
     setContact(contactName, inpcontact)
 }
 
+function deleteContact(id) {
+    let data = getContact();
+
+    if (!data) return;
+
+    let newData = data.filter((value) => value.id !== id);
+    newData = JSON.stringify(newData)
+    localStorage.setItem("contact", newData);
+    showContact()
+}
+
 document.querySelector(".button").addEventListener("click", () => {
     save()
     document.querySelector("#inpname").value = '';
@@ -56,10 +67,11 @@ function showContact() {
     let data = getContact();
     if (!data) return;
 
-    data.forEach((value, text) =>{
+    data.forEach(value => {
         html += `<li>
-                    <span class="name">Name:${value["contactName"]}</span>
-                    <span class="number">Number:${value["contactNamber"]}</span>
+                    <span class="name">Name:${value.contactName}</span>
+                    <span class="number">Number:${value.contactNumber}</span>
+                    <span class="delete" onclick="deleteContact(${value.id})">X</span>
                  </li>`
     })
     document.querySelector(".contacts-list").innerHTML = html;
