@@ -26,7 +26,7 @@ function setContact(contactName, contactNumber) {
 
     setTimeout(() => {
         addMes.classList.add("noadd")
-    }, 3000)
+    }, 5000)
 
     let data = getContact()
     data = (data) ? data : [];
@@ -55,7 +55,7 @@ function save() {
 
         setTimeout(() => {
             errMes.classList.add("noerror")
-        }, 3000)
+        }, 5000)
 
         return
     }
@@ -69,7 +69,7 @@ function save() {
 
         setTimeout(() => {
             dubMes.classList.add("nodublic")
-        }, 3000)
+        }, 5000)
 
         return
     }
