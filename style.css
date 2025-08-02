@@ -84,3 +84,88 @@ li {
     cursor: pointer;
     background-color: #ca2525;
 }
+
+.add {
+    display: block;
+    position: absolute;
+    right: 1rem;
+    top: 20rem;
+    background-color: #13bf13;
+    color: white;
+    font-size: 1.1rem;
+    width: 340px;
+    text-align: center;
+    padding: 5px 12px;
+    border-radius: 4px;
+    animation: add 1s forwards;
+}
+
+@keyframes add {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.noadd {
+    display: none;
+}
+
+.error {
+    display: block;
+    position: absolute;
+    right: 1rem;
+    top: 20rem;
+    background-color: #c81b1b;
+    color: white;
+    font-size: 1.1rem;
+    width: 340px;
+    text-align: center;
+    padding: 5px 12px;
+    border-radius: 4px;
+    animation: error 1s forwards;
+}
+
+@keyframes error {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.noerror {
+    display: none;
+}
+
+
+.dublic {
+    display: block;
+    position: absolute;
+    right: 1rem;
+    top: 20rem;
+    background-color: #c81b1b;
+    color: white;
+    font-size: 1.1rem;
+    width: 340px;
+    text-align: center;
+    padding: 5px 12px;
+    border-radius: 4px;
+    animation: dublic 1s forwards;
+}
+
+@keyframes dublic {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.nodublic {
+    display: none;
+}

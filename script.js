@@ -19,6 +19,15 @@ function getId() {
 }
 
 function setContact(contactName, contactNumber) {
+
+    const addMes = document.querySelector(".add")
+
+    addMes.classList.remove("noadd")
+
+    setTimeout(() => {
+        addMes.classList.add("noadd")
+    }, 3000)
+
     let data = getContact()
     data = (data) ? data : [];
     let id = getId()
@@ -38,7 +47,32 @@ function setContact(contactName, contactNumber) {
 function save() {
     const contactName = document.querySelector("#inpname").value;
     const inpcontact = document.querySelector("#inpcontact").value;
-    if (!contactName || !inpcontact) return false
+
+    const errMes = document.querySelector(".error")
+
+    if (!contactName || !inpcontact) {
+        errMes.classList.remove("noerror")
+
+        setTimeout(() => {
+            errMes.classList.add("noerror")
+        }, 3000)
+
+        return
+    }
+
+    let data = getContact();
+    const dublicate = data.some(cont => cont.contactNumber === inpcontact)
+    const dubMes = document.querySelector(".dublic")
+    if (dublicate) {
+
+        dubMes.classList.remove("nodublic")
+
+        setTimeout(() => {
+            dubMes.classList.add("nodublic")
+        }, 3000)
+
+        return
+    }
 
     setContact(contactName, inpcontact)
 }
